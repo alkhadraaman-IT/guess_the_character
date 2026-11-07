@@ -1,16 +1,38 @@
 import 'dart:math';
 
-class GameLogic {
-  static String? selectedHero;
-  static String? heroInfo;
-  static String? outOfLoopPlayer;
+import 'models/player.dart';
 
-  static void setupGame(List<String> players, Map<String, String> heroes) {
-    if (players.isEmpty || heroes.isEmpty) return;
-    Random random = Random();
-    int heroIndex = random.nextInt(heroes.length);
-    selectedHero = heroes.keys.elementAt(heroIndex);
-    heroInfo = heroes[selectedHero];
-    outOfLoopPlayer = players[random.nextInt(players.length)];
+/// نتيجة جولة جديدة — كائن ثابت يحوي كل بيانات الجولة.
+/// بديل عن الـ static mutable القديم.
+class GameSetup {
+  final String hero;
+  final String heroInfo;
+  final Player outOfLoopPlayer;
+
+  const GameSetup({
+    required this.hero,
+    required this.heroInfo,
+    required this.outOfLoopPlayer,
+  });
+}
+
+class GameLogic {
+  /// ترجع null إذا المدخلات فاضية (لا لاعبين أو لا شخصيات).
+  /// caller لازم يتحقق من الـ null قبل الاستخدام.
+  static GameSetup? setupGame(
+    List<Player> players,
+    Map<String, String> heroes,
+  ) {
+    if (players.isEmpty || heroes.isEmpty) return null;
+
+    final Random random = Random();
+    final String heroKey = heroes.keys.elementAt(random.nextInt(heroes.length));
+    final Player outPlayer = players[random.nextInt(players.length)];
+
+    return GameSetup(
+      hero: heroKey,
+      heroInfo: heroes[heroKey] ?? '',
+      outOfLoopPlayer: outPlayer,
+    );
   }
 }

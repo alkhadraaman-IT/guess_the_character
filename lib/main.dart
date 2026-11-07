@@ -2,8 +2,8 @@ import 'package:flutter/material.dart';
 import 'app_theme.dart';
 import 'screens/splash_screen.dart';
 import 'screens/home_screen.dart';
-import 'screens/setup_screen.dart';
-import 'screens/categories_screen.dart';
+import 'screens/setup/setup_screen.dart';
+import 'screens/categories/categories_screen.dart';
 
 void main() => runApp(const BatalApp());
 

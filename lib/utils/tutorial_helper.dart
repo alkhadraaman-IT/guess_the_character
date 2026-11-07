@@ -34,18 +34,21 @@ class TutorialHelper {
             borderRadius: BorderRadius.circular(20),
           ),
           title: const Text('كيف تلعب؟ 👋'),
-          content: SingleChildScrollView(
+          content: const SingleChildScrollView(
             child: Column(
               crossAxisAlignment: CrossAxisAlignment.start,
               mainAxisSize: MainAxisSize.min,
-              children: const [
-                Text('🎯 الهدف: اكتشفوا مين "برا السالفة" قبل ما يكتشف الشخصية التاريخية!'),
+              children: [
+                Text(
+                    '🎯 الهدف: اكتشفوا مين "برا السالفة" قبل ما يكتشف الشخصية التاريخية!'),
                 SizedBox(height: 10),
                 Text('👥 العدد: 3 لاعبين على الأقل.'),
                 SizedBox(height: 10),
-                Text('1️⃣ كل لاعب يفتح دوره على جهازه — الجميع يعرفون الشخصية إلا واحد.'),
+                Text(
+                    '1️⃣ كل لاعب يفتح دوره على جهازه — الجميع يعرفون الشخصية إلا واحد.'),
                 SizedBox(height: 10),
-                Text('2️⃣ اللي "برا السالفة" ما يعرف الشخصية، وعليه يندمج بالأسئلة.'),
+                Text(
+                    '2️⃣ اللي "برا السالفة" ما يعرف الشخصية، وعليه يندمج بالأسئلة.'),
                 SizedBox(height: 10),
                 Text('3️⃣ تبادلوا الأسئلة بالترتيب.'),
                 SizedBox(height: 10),

@@ -29,12 +29,7 @@ class _SplashScreenState extends State<SplashScreen> {
           child: Column(
             mainAxisAlignment: MainAxisAlignment.center,
             children: [
-              Image.asset('assets/logo.jpg', height: 200),
-              const SizedBox(height: 24),
-              Text(
-                'القدوة',
-                style: Theme.of(context).textTheme.displayLarge,
-              ),
+              Image.asset('assets/logo.jpg', height: 300),
             ],
           ),
         ),
